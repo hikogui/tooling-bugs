@@ -15,8 +15,8 @@ set(CMAKE_EXPERIMENTAL_CXX_MODULE_DYNDEP 1)
 
 project(default)
 
-add_library(example_lib example.cpp)
-target_sources(example_lib PUBLIC FILE_SET CXX_MODULES FILES weird.ixx)
-target_compile_features(example_lib PUBLIC cxx_std_23)
-target_compile_options(example_lib PUBLIC -nologo)
+add_executable(example example.cpp)
+target_sources(example PUBLIC FILE_SET CXX_MODULES FILES weird.ixx)
+target_compile_features(example PUBLIC cxx_std_20)
+target_compile_options(example PUBLIC -nologo)
 

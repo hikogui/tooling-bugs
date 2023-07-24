@@ -2,13 +2,16 @@
     "version": 3,
     "configurePresets": [
         {
-            "name": "x64-windows",
-            "hidden": true,
+            "name": "x64-windows-dbg",
+            "displayName": "Debug",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_VERBOSE_MAKEFILE": "ON"
+                "CMAKE_VERBOSE_MAKEFILE": "ON",
+                "CMAKE_CXX_COMPILER": "cl",
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_BUILD_TYPE": "Debug"
             },
             "architecture": {
                 "value": "x64",
@@ -20,38 +23,9 @@
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": [ "Windows" ]
-                }
-            }
-        },
-        {
-            "name": "vc17-x64-windows",
-            "hidden": true,
-            "inherits": "x64-windows",
-            "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "cl",
-                "CMAKE_C_COMPILER": "cl"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": [ "Windows" ],
                     "intelliSenseMode": "windows-msvc-x64"
                 }
-            }
-        },
-        {
-            "name": "vc17-x64-windows-static",
-            "hidden": true,
-            "inherits": "vc17-x64-windows",
-            "cacheVariables": {
-                "BUILD_SHARED_LIBS": "OFF"
-            }
-        },
-        {
-            "name": "vc17-x64-windows-static-dbg-nopch",
-            "displayName": "MSVC-x64-Debug",
-            "inherits": "vc17-x64-windows-static",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
             }
         }
     ]
