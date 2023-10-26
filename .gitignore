@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+*.dmp
+.vs
+.vscode
+out
+vc140.pdb
