@@ -1,5 +1,5 @@
 module;
-export module B;
+export module A;
 
 // constexpr try/catch inside module is not implemented,
 // the bar() function in example.cpp works because that is not a module.
